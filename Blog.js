@@ -11,6 +11,7 @@ function handleSubmit(event) {
   let react = document.getElementById("react").checked;
   let nextjs = document.getElementById("nextJs").checked;
   let typescript = document.getElementById("typescript").checked;
+  let projectDuration = getDuration(start, end);
 
     if (nodejs) {
         nodejs = document.getElementById("nodeJs").value
@@ -45,7 +46,8 @@ let blog = {
     nodejs: nodejs,
     react: react,
     nextjs: nextjs,
-    typescript: typescript
+    typescript: typescript,
+    duration: projectDuration
 }
 
   data.push(blog);
@@ -70,6 +72,7 @@ function renderBlog() {
             <p>${data[i].desc}</p>
           </div>
           <div class="tech">
+            <p class="durasi">Durasi :${blog[dataBlog].duration}
             <i class="${data[i].nodejs}"></i>
             <i class="${data[i].react}"></i>
             <i class="${data[i].nextjs}"></i>
